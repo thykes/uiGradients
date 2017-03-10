@@ -1,7 +1,7 @@
 <template>
   <main class="display">
 
-    <div class="gradientname">
+    <div class="display__gradientname">
       <p>Aquatic Blue</p>
     </div>
 

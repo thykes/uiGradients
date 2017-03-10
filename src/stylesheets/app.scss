@@ -124,24 +124,21 @@ body {
   left: 0;
   right: 0;
 
-
-
   background: #DD5E89;
   background: -webkit-linear-gradient(to left, #DD5E89 , #F7BB97);
   background: linear-gradient(to left, #DD5E89 , #F7BB97);
 
-}
+  &__gradientname {
+    @include font-smoothing();
+    position: absolute;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    top: -8px;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 0;
+  }
 
-
-.gradientname {
-  @include font-smoothing();
-  position: absolute;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  top: -8px;
-  color: #fff;
-  font-size: 18px;
-  margin-top: 0;
 }
 
 

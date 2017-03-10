@@ -3,6 +3,8 @@
 import Vue from 'vue';
 import App from './App';
 
+require('./stylesheets/app.scss');
+
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

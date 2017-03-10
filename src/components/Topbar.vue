@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" v-once>
     <Logo class="header__logo" />
     <ul class="social header__social">
       <li>

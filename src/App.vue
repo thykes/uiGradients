@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <topbar></topbar>
-    <actionbar></actionbar>
-    <Display></Display>
+    <Topbar />
+    <Actionbar />
+    <Display />
   </div>
 </template>
 

@@ -17,7 +17,7 @@
 
     <div class="actionbar__section tar">
       <a href="#" class="trigger">
-        <Code class="trigger__icon" /> Get CSS code
+        <Brackets class="trigger__icon" /> Get CSS code
       </a>
       <a href="#" class="trigger">
         <Add class="trigger__icon" /> Add Gradient
@@ -29,12 +29,12 @@
 
 <script>
 import Add from '../assets/add.svg';
-import Code from '../assets/code.svg';
+import Brackets from '../assets/code.svg';
 
 export default {
   name: 'actionbar',
   components: {
-    Add, Code,
+    Add, Brackets,
   },
 };
 </script>

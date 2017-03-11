@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" />
     <Display />
-  </div>
+  </main>
 </template>
 
 <script>
@@ -39,7 +39,14 @@ export default {
     },
     setCurrentGradient() {
       this.$on('gradients-loaded', () => {
-        this.currentGradient = this.gradients[Math.floor(Math.random() * this.gradients.length)];
+        if (window.location.hash) {
+          const gradientName = window.location.hash.substring(1);
+          const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === gradientName);
+          this.currentGradient = this.gradients[id];
+        } else {
+          this.currentGradient = this.gradients[Math.floor(Math.random() * this.gradients.length)];
+          window.location.hash = this.currentGradient.name.replace(/\s/g, '');
+        }
       });
     },
     boot() {

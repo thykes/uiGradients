@@ -1,5 +1,5 @@
 <template>
-  <div class="actionbar">
+  <section class="actionbar">
     <div class="actionbar__section">
         <a href="#" class="burger menu" id="js-burger-menu">
             <span class="menu__icon"></span>
@@ -23,7 +23,7 @@
         <Add class="trigger__icon" /> Add Gradient
       </a>
     </div>
-  </div>
+  </section>
 </template>
 
 

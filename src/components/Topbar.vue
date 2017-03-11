@@ -15,7 +15,7 @@
         </a>
       </li>
       <li class="ml10">
-        <a href="">
+        <a href="https://github.com/Ghosh/uiGradients" target="_blank">
           <Github class="header__github" />
         </a>
       </li>

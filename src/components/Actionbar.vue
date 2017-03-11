@@ -33,6 +33,7 @@ import Brackets from '../assets/code.svg';
 
 export default {
   name: 'actionbar',
+  props: ['gradient'],
   components: {
     Add, Brackets,
   },

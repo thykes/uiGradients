@@ -8,11 +8,11 @@
     </div>
 
     <div class="actionbar__section tac">
-      <div class="hex mono"><span class="hex__block"></span> #eaeaed</div>
+      <Swatch :color="gradient.colors[0]" />
       &nbsp;
       →
       &nbsp;
-      <div class="hex mono"><span class="hex__block"></span> #eaeaed</div>
+      <Swatch :color="gradient.colors[1]" />
     </div>
 
     <div class="actionbar__section tar">
@@ -28,6 +28,8 @@
 
 
 <script>
+import Swatch from './Swatch';
+
 import Add from '../assets/add.svg';
 import Brackets from '../assets/code.svg';
 
@@ -35,7 +37,7 @@ export default {
   name: 'actionbar',
   props: ['gradient'],
   components: {
-    Add, Brackets,
+    Add, Brackets, Swatch,
   },
 };
 </script>

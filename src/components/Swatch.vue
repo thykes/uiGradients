@@ -1,8 +1,9 @@
 <template>
-  <div class="hex mono">
+  <li class="hex mono">
     <span class="hex__block" :style="{ background: color }"></span>
-    {{color}}
-  </div>
+    {{color | lowercase}}
+    <span class="hex__arrow">→&nbsp;</span>
+  </li>
 </template>
 
 
@@ -10,5 +11,10 @@
 export default {
   name: 'swatch',
   props: ['color'],
+  filters: {
+    lowercase(value) {
+      return (!value) ? '' : value.toString().toLowerCase();
+    },
+  },
 };
 </script>

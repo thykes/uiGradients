@@ -2,7 +2,7 @@
   <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" />
-    <Display />
+    <Display :gradient="currentGradient" />
   </main>
 </template>
 

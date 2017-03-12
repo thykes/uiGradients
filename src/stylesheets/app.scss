@@ -110,6 +110,12 @@ body {
       height: 14px;
       background-color: #69D8E7;
     }
+
+    .hex__arrow { font-style: 16px !important; }
+
+    &.last {
+      .hex__arrow { display: none; }
+    }
   }
 
 
@@ -124,9 +130,9 @@ body {
   left: 0;
   right: 0;
 
-  background: #DD5E89;
-  background: -webkit-linear-gradient(to left, #DD5E89 , #F7BB97);
-  background: linear-gradient(to left, #DD5E89 , #F7BB97);
+  // background: #DD5E89;
+  // background: -webkit-linear-gradient(to left, #DD5E89 , #F7BB97);
+  // background: linear-gradient(to left, #DD5E89 , #F7BB97);
 
   &__gradientname {
     @include font-smoothing();

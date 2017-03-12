@@ -1,5 +1,5 @@
 <template>
-  <main class="display">
+  <main class="display" :style="background">
 
     <div class="display__gradientname">
       <p>Aquatic Blue</p>
@@ -21,6 +21,15 @@ export default {
   name: 'display',
   components: {
     LeftArrow, RightArrow,
+  },
+  data() {
+    return {
+      background: {
+        /* eslint-disable no-dupe-keys */
+        background: '#FF4E50',
+        background: 'linear-gradient(to left, #FF4E50 , #F9D423)',
+      },
+    };
   },
 };
 </script>

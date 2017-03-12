@@ -8,11 +8,9 @@
     </div>
 
     <div class="actionbar__section tac">
-      <Swatch :color="gradient.colors[0]" />
-      &nbsp;
-      →
-      &nbsp;
-      <Swatch :color="gradient.colors[1]" />
+      <template v-for="(color, index) in colors">
+        <Swatch :color="color" :class="{'last' : index === (colors.length - 1)}" />
+      </template>
     </div>
 
     <div class="actionbar__section tar">
@@ -38,6 +36,11 @@ export default {
   props: ['gradient'],
   components: {
     Add, Brackets, Swatch,
+  },
+  computed: {
+    colors() {
+      return this.gradient.colors;
+    },
   },
 };
 </script>

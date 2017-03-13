@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     updateIndex(dir) {
-      this.$emit('update-index', dir);
+      this.$emit('updatedIndex', dir);
     },
   },
 };

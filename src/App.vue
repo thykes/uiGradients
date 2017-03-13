@@ -2,7 +2,7 @@
   <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" />
-    <Display :gradient="currentGradient" :gradientStyle="gradientStyle" />
+    <Display :gradient="currentGradient" :gradientStyle="gradientStyle" @updatedIndex="updateIndex" />
   </main>
 </template>
 
@@ -32,6 +32,15 @@ export default {
     Actionbar,
   },
   methods: {
+    updateIndex(direction) {
+      if (direction === 'up') {
+        const updatedIndex = this.index + 1;
+        this.index = (updatedIndex >= this.gradients.length - 1) ? 0 : updatedIndex;
+      } else if (direction === 'down') {
+        const updatedIndex = this.index - 1;
+        this.index = (updatedIndex <= 0) ? this.gradients.length - 1 : updatedIndex;
+      }
+    },
     fetchGradients() {
       const route = 'https://raw.githubusercontent.com/ghosh/uiGradients/master/build/gradients.json';
       axios.get(route).then((response) => {

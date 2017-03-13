@@ -2,7 +2,7 @@
   <main class="display" :style="background">
 
     <div class="display__gradientname">
-      <p>Aquatic Blue</p>
+      <p>{{gradient.name}}</p>
     </div>
 
     <ul class="nav" id="nav">
@@ -19,6 +19,7 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
+  props: ['gradient'],
   components: {
     LeftArrow, RightArrow,
   },

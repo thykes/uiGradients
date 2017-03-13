@@ -17,6 +17,7 @@ export default {
   name: 'app',
   data() {
     return {
+      index: {},
       currentGradient: {},
       gradients: [],
       gradientStyle: {
@@ -46,9 +47,12 @@ export default {
         if (window.location.hash) {
           const gradientName = window.location.hash.substring(1);
           const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === gradientName);
+          this.index = id;
           this.currentGradient = this.gradients[id];
         } else {
-          this.currentGradient = this.gradients[Math.floor(Math.random() * this.gradients.length)];
+          const randomId = Math.floor(Math.random() * this.gradients.length);
+          this.index = randomId;
+          this.currentGradient = this.gradients[randomId];
           window.location.hash = this.currentGradient.name.replace(/\s/g, '');
         }
         this.$emit('current-gradient-set');

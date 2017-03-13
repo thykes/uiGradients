@@ -6,8 +6,12 @@
     </div>
 
     <ul class="nav" id="nav">
-      <li class="nav__item" id="nav--prev"><LeftArrow class="nav__arrow nav__arrow--left"/></li>
-      <li class="nav__item" id="nav--next"><RightArrow class="nav__arrow nav__arrow--right"/></li>
+      <li class="nav__item" id="nav--prev" @click.prevent="updateIndex('down')">
+        <a href="#"><LeftArrow class="nav__arrow nav__arrow--left"/></a>
+      </li>
+      <li class="nav__item" id="nav--next" @click.prevent="updateIndex('up')">
+        <a href="#"><RightArrow class="nav__arrow nav__arrow--right"/></a>
+      </li>
     </ul>
 
   </main>
@@ -30,6 +34,11 @@ export default {
         background: `${this.gradientStyle.color}`,
         background: `linear-gradient(${this.gradientStyle.gradient})`,
       };
+    },
+  },
+  methods: {
+    updateIndex(dir) {
+      this.$emit('update-index', dir);
     },
   },
 };

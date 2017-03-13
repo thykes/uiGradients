@@ -1,5 +1,5 @@
 <template>
-  <main class="display" :style="background">
+  <main class="display" :style="backgroundStyle">
 
     <div class="display__gradientname">
       <p>{{gradient.name}}</p>
@@ -19,18 +19,18 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
-  props: ['gradient'],
+  props: ['gradient', 'gradientStyle'],
   components: {
     LeftArrow, RightArrow,
   },
-  data() {
-    return {
-      background: {
+  computed: {
+    backgroundStyle() {
+      return {
         /* eslint-disable no-dupe-keys */
-        background: '#FF4E50',
-        background: 'linear-gradient(to left, #FF4E50 , #F9D423)',
-      },
-    };
+        background: `${this.gradientStyle.color}`,
+        background: `linear-gradient(${this.gradientStyle.gradient})`,
+      };
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" />
-    <Display :gradient="currentGradient" />
+    <Display :gradient="currentGradient" :gradientStyle="gradientStyle" />
   </main>
 </template>
 
@@ -19,6 +19,10 @@ export default {
     return {
       currentGradient: {},
       gradients: [],
+      gradientStyle: {
+        gradient: null,
+        color: null,
+      },
     };
   },
   components: {
@@ -47,11 +51,19 @@ export default {
           this.currentGradient = this.gradients[Math.floor(Math.random() * this.gradients.length)];
           window.location.hash = this.currentGradient.name.replace(/\s/g, '');
         }
+        this.$emit('current-gradient-set');
+      });
+    },
+    setGradientString() {
+      this.$on('current-gradient-set', () => {
+        this.gradientStyle.gradient = ['to right', ...this.currentGradient.colors].join();
+        this.gradientStyle.color = this.currentGradient.colors[0];
       });
     },
     boot() {
       this.fetchGradients();
       this.setCurrentGradient();
+      this.setGradientString();
     },
   },
   mounted() {

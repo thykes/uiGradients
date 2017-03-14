@@ -2,8 +2,8 @@
   <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" :palette="showingPalette" @togglePalette="togglePalette" />
-    <List :gradients="gradients" :palette="showingPalette" />
-    <Display :gradient="currentGradient"  @updatedIndex="updateIndex" />
+    <List :gradients="gradients" :palette="showingPalette" @updateGradient="updateGradient" />
+    <Display :gradient="currentGradient"  @updatedIndex="updateIndex" @togglePalette="togglePalette" />
   </main>
 </template>
 
@@ -32,6 +32,11 @@ export default {
     List,
   },
   methods: {
+    updateGradient(name) {
+      const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === name.replace(/\s/g, ''));
+      this.index = id;
+      if (this.showingPalette) this.showingPalette = false;
+    },
     togglePalette() {
       this.showingPalette = !this.showingPalette;
     },
@@ -43,6 +48,7 @@ export default {
         const updatedIndex = this.index - 1;
         this.index = (updatedIndex <= 0) ? this.gradients.length - 1 : updatedIndex;
       }
+      this.showingPalette = false;
     },
     fetchGradients() {
       const route = 'https://raw.githubusercontent.com/ghosh/uiGradients/master/build/gradients.json';
@@ -58,8 +64,7 @@ export default {
       this.$on('gradients-loaded', () => {
         if (window.location.hash) {
           const gradientName = window.location.hash.substring(1);
-          const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === gradientName);
-          this.index = id;
+          this.updateGradient(gradientName);
         } else {
           const randomId = Math.floor(Math.random() * this.gradients.length);
           this.index = randomId;
@@ -75,10 +80,6 @@ export default {
     index(val) {
       this.currentGradient = this.gradients[val];
       window.location.hash = this.currentGradient.name.replace(/\s/g, '');
-    },
-    currentGradient(val) {
-      this.gradientStyle.gradient = ['to right', ...val.colors].join();
-      this.gradientStyle.color = this.currentGradient.colors[0];
     },
   },
   mounted() {

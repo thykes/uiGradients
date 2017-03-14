@@ -1,5 +1,5 @@
 <template>
-  <div class="palette__gradient" :style="backgroundStyle">
+  <div class="palette__gradient" :style="backgroundStyle" @click.prevent="updateGradient(gradient.name)">
       <p class="palette__name" style="color: rgb(255, 255, 255);">{{ gradient.name }}</p>
   </div>
 </template>
@@ -14,6 +14,11 @@ export default {
       return {
         background: `linear-gradient(to left, ${colors})`,
       };
+    },
+  },
+  methods: {
+    updateGradient(name) {
+      this.$emit('updateGradient', name);
     },
   },
 };

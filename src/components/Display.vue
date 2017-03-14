@@ -38,6 +38,9 @@ export default {
     updateIndex(dir) {
       this.$emit('updatedIndex', dir);
     },
+    togglePalette() {
+      this.$emit('togglePalette');
+    },
     handleKeyboardEvents(event) {
       switch (event.which) {
         case 37: // left
@@ -45,6 +48,11 @@ export default {
           break;
         case 39: // right
           this.updateIndex('up');
+          break;
+        case 16:
+        case 32: // shift
+          event.preventDefault();
+          this.togglePalette();
           break;
         default:
       }

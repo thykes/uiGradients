@@ -98,7 +98,7 @@
 
  @mixin burger-to-cross {
   & {
-    background-color: transparent;
+    background-color: transparent !important;
   }
   &:before {
     -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);

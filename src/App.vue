@@ -1,8 +1,8 @@
 <template>
   <main id="app">
     <Topbar />
-    <Actionbar :gradient="currentGradient" />
-    <List :gradients="gradients" />
+    <Actionbar :gradient="currentGradient" :palette="showingPalette" @togglePalette="togglePalette" />
+    <List :gradients="gradients" :palette="showingPalette" />
     <Display :gradient="currentGradient"  @updatedIndex="updateIndex" />
   </main>
 </template>
@@ -22,10 +22,7 @@ export default {
       index: {},
       currentGradient: {},
       gradients: [],
-      gradientStyle: {
-        gradient: null,
-        color: null,
-      },
+      showingPalette: false,
     };
   },
   components: {
@@ -35,6 +32,9 @@ export default {
     List,
   },
   methods: {
+    togglePalette() {
+      this.showingPalette = !this.showingPalette;
+    },
     updateIndex(direction) {
       if (direction === 'up') {
         const updatedIndex = this.index + 1;

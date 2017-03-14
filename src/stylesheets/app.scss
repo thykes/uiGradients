@@ -19,7 +19,7 @@ body {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 3;
   position: relative;
 
   &__logo {
@@ -52,7 +52,7 @@ body {
   justify-content: space-between;
   text-align: left;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
   position: relative;
 
   &__section {
@@ -68,7 +68,7 @@ body {
 
 
   .menu {
-    padding-right: 0; // No negate margin on mobile
+    padding-right: 0;
     &__icon {
       @include burger(20px, 2px, 3px, #333, 13px);
     }
@@ -238,6 +238,13 @@ body {
   padding-bottom: 8px;
   overflow: scroll;
   box-sizing: border-box;
+  // transition: all 0.3s ease-in-out;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translate3d(0, -100%, 0);
+
+  &.active {
+    transform: translate3d(0 ,0, 0);
+  }
 
   &__list {
     @include clearfix();
@@ -252,8 +259,19 @@ body {
   &__item {
     flex: 0 1 33.33%;
     box-sizing: border-box;
-    color: #171e42;
     padding: 10px;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #222;
+      border-radius: 3px;
+      transform: scale(1.02);
+      .palette__name {
+        text-decoration: underline;
+      }
+    }
+
   }
 
   &__gradient {
@@ -272,7 +290,7 @@ body {
     padding: 0;
     line-height: 130px;
     font-family: "Source Code Pro", monospace;
-    font-size: 13px;
+    font-size: 15px;
   }
 
 

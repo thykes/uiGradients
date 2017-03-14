@@ -1,5 +1,5 @@
 <template>
-  <div class="palette">
+  <div :class="{ 'active': palette, 'palette': true }">
     <ul class="palette__list">
 
       <li class="palette__item" v-for="gradient in gradients">
@@ -15,7 +15,7 @@ import Palette from './Palette';
 
 export default {
   name: 'list',
-  props: ['gradients'],
+  props: ['gradients', 'palette'],
   components: {
     Palette,
   },

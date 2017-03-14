@@ -1,7 +1,7 @@
 <template>
   <section class="actionbar">
     <div class="actionbar__section">
-        <a href="#" class="burger menu" id="js-burger-menu">
+        <a href="#" :class="{ 'burger': true, 'menu': true , 'is-active': palette}" @click.prevent="togglePalette()">
             <span class="menu__icon"></span>
             Show all gradients
         </a>
@@ -33,9 +33,14 @@ import Brackets from '../assets/code.svg';
 
 export default {
   name: 'actionbar',
-  props: ['gradient'],
+  props: ['gradient', 'palette'],
   components: {
     Add, Brackets, Swatch,
+  },
+  methods: {
+    togglePalette() {
+      this.$emit('togglePalette');
+    },
   },
 };
 </script>

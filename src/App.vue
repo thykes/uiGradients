@@ -2,6 +2,7 @@
   <main id="app">
     <Topbar />
     <Actionbar :gradient="currentGradient" />
+    <List :gradients="gradients" />
     <Display :gradient="currentGradient" :gradientStyle="gradientStyle" @updatedIndex="updateIndex" />
   </main>
 </template>
@@ -12,6 +13,7 @@ import axios from 'axios';
 import Topbar from './components/Topbar';
 import Actionbar from './components/Actionbar';
 import Display from './components/Display';
+import List from './components/List';
 
 export default {
   name: 'app',
@@ -30,6 +32,7 @@ export default {
     Topbar,
     Display,
     Actionbar,
+    List,
   },
   methods: {
     updateIndex(direction) {
@@ -68,9 +71,6 @@ export default {
       this.setCurrentGradient();
     },
   },
-  mounted() {
-    this.boot();
-  },
   watch: {
     index(val) {
       this.currentGradient = this.gradients[val];
@@ -81,6 +81,8 @@ export default {
       this.gradientStyle.color = this.currentGradient.colors[0];
     },
   },
-
+  mounted() {
+    this.boot();
+  },
 };
 </script>

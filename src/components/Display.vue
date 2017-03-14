@@ -1,6 +1,5 @@
 <template>
   <main class="display" :style="backgroundStyle">
-
     <div class="display__gradientname">
       <p class="noselect">{{gradient.name}}</p>
     </div>

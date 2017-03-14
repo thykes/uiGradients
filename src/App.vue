@@ -57,30 +57,30 @@ export default {
           const gradientName = window.location.hash.substring(1);
           const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === gradientName);
           this.index = id;
-          this.currentGradient = this.gradients[id];
         } else {
           const randomId = Math.floor(Math.random() * this.gradients.length);
           this.index = randomId;
-          this.currentGradient = this.gradients[randomId];
-          window.location.hash = this.currentGradient.name.replace(/\s/g, '');
         }
-        this.$emit('current-gradient-set');
-      });
-    },
-    setGradientString() {
-      this.$on('current-gradient-set', () => {
-        this.gradientStyle.gradient = ['to right', ...this.currentGradient.colors].join();
-        this.gradientStyle.color = this.currentGradient.colors[0];
       });
     },
     boot() {
       this.fetchGradients();
       this.setCurrentGradient();
-      this.setGradientString();
     },
   },
   mounted() {
     this.boot();
   },
+  watch: {
+    index(val) {
+      this.currentGradient = this.gradients[val];
+      window.location.hash = this.currentGradient.name.replace(/\s/g, '');
+    },
+    currentGradient(val) {
+      this.gradientStyle.gradient = ['to right', ...val.colors].join();
+      this.gradientStyle.color = this.currentGradient.colors[0];
+    },
+  },
+
 };
 </script>

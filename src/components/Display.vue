@@ -2,7 +2,7 @@
   <main class="display" :style="backgroundStyle">
 
     <div class="display__gradientname">
-      <p>{{gradient.name}}</p>
+      <p class="noselect">{{gradient.name}}</p>
     </div>
 
     <ul class="nav" id="nav">
@@ -40,6 +40,20 @@ export default {
     updateIndex(dir) {
       this.$emit('updatedIndex', dir);
     },
+    handleKeyboardEvents(event) {
+      switch (event.which) {
+        case 37: // left
+          this.updateIndex('down');
+          break;
+        case 39: // right
+          this.updateIndex('up');
+          break;
+        default:
+      }
+    },
+  },
+  created() {
+    window.addEventListener('keyup', this.handleKeyboardEvents);
   },
 };
 </script>

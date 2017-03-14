@@ -14,10 +14,10 @@
     </div>
 
     <div class="actionbar__section tar">
-      <a href="#" class="trigger">
+      <a href="#" class="trigger noselect">
         <Brackets class="trigger__icon" /> Get CSS code
       </a>
-      <a href="#" class="trigger">
+      <a href="#" class="trigger noselect">
         <Add class="trigger__icon" /> Add Gradient
       </a>
     </div>

@@ -22,16 +22,15 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
-  props: ['gradient', 'gradientStyle'],
+  props: ['gradient'],
   components: {
     LeftArrow, RightArrow,
   },
   computed: {
     backgroundStyle() {
+      const colors = (Object.keys(this.gradient).length === 0) ? ['#888', '#444'].join(', ') : [...this.gradient.colors].reverse().join(', ');
       return {
-        /* eslint-disable no-dupe-keys */
-        background: `${this.gradientStyle.color}`,
-        background: `linear-gradient(${this.gradientStyle.gradient})`,
+        background: `linear-gradient(to left, ${colors})`,
       };
     },
   },

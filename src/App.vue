@@ -3,7 +3,7 @@
     <Topbar />
     <Actionbar :gradient="currentGradient" />
     <List :gradients="gradients" />
-    <Display :gradient="currentGradient" :gradientStyle="gradientStyle" @updatedIndex="updateIndex" />
+    <Display :gradient="currentGradient"  @updatedIndex="updateIndex" />
   </main>
 </template>
 

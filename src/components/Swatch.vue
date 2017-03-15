@@ -1,7 +1,7 @@
 <template>
   <li class="hex mono">
     <span class="hex__block" :style="{ background: color }"></span>
-    {{color | lowercase}}
+    <span class="hex__name">{{color | lowercase}}</span>
     <span class="hex__arrow">→&nbsp;</span>
   </li>
 </template>

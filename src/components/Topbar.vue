@@ -37,10 +37,5 @@ export default {
     Twitter,
     Github,
   },
-  data() {
-    return {
-      msg: 'Hello, is it me you are looking for?',
-    };
-  },
 };
 </script>

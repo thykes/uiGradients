@@ -1,6 +1,6 @@
 <template>
   <div class="palette__gradient" :style="backgroundStyle" @click.prevent="updateGradient(gradient.name)">
-      <p class="palette__name" style="color: rgb(255, 255, 255);">{{ gradient.name }}</p>
+      <p class="palette__name">{{ gradient.name }}</p>
   </div>
 </template>
 

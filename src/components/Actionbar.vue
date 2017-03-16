@@ -7,7 +7,7 @@
         </a>
     </div>
 
-    <div class="actionbar__section tac">
+    <div class="actionbar__section actionbar__section--swatch tac">
       <template v-for="(color, index) in gradient.colors">
         <Swatch :color="color" :class="{'last' : index === (gradient.colors.length - 1)}" />
       </template>
@@ -15,10 +15,10 @@
 
     <div class="actionbar__section tar">
       <a href="#" class="trigger noselect">
-        <Brackets class="trigger__icon" /> Get CSS code
+        Get CSS code
       </a>
       <a href="#" class="trigger noselect">
-        <Add class="trigger__icon" /> Add Gradient
+        Add Gradient
       </a>
     </div>
   </section>

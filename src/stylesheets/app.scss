@@ -58,6 +58,13 @@ body {
   &__section {
     flex-grow: 1;
     flex-basis: 33.333%;
+    margin-top: -2px; // hack to visually center align content
+
+    &--swatch {
+      display: flex;
+      justify-content: center;
+    }
+
   }
 
   &__left {
@@ -93,7 +100,7 @@ body {
   .trigger {
     margin-left: 15px;
     text-decoration: none;
-    color: #373737;
+    color: #333;
     font-size: 14px;
   }
 

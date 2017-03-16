@@ -4,13 +4,25 @@
     <Actionbar
       :gradient="currentGradient"
       :palette="showingPalette"
-      :showGradientModal="showGradientModal"
+      :showModal="showModal"
       :closeModals="closeModals"
-      @togglePalette="togglePalette"
-      />
-    <List :gradients="gradients" :palette="showingPalette" @updateGradient="updateGradient" />
-    <Display :gradient="currentGradient"  @updatedIndex="updateIndex" @togglePalette="togglePalette" />
-    <GradientModal :show="showingGradientModal" :closeModals="closeModals"/>
+      @togglePalette="togglePalette" />
+    <List
+      :gradients="gradients"
+      :palette="showingPalette"
+      @updateGradient="updateGradient" />
+    <Display
+      :gradient="currentGradient"
+      :closeModals="closeModals"
+      @updatedIndex="updateIndex"
+      @togglePalette="togglePalette" />
+    <GradientModal
+      :show="showingGradientModal"
+      :closeModals="closeModals" />
+    <CodeModal
+      :gradient="currentGradient"
+      :show="showingCodeModal"
+      :closeModals="closeModals" />
   </main>
 </template>
 
@@ -22,6 +34,7 @@ import Actionbar from './components/Actionbar';
 import Display from './components/Display';
 import List from './components/List';
 import GradientModal from './components/GradientModal';
+import CodeModal from './components/CodeModal';
 
 export default {
   name: 'app',
@@ -32,6 +45,7 @@ export default {
       gradients: [],
       showingPalette: false,
       showingGradientModal: false,
+      showingCodeModal: false,
     };
   },
   components: {
@@ -40,13 +54,16 @@ export default {
     Actionbar,
     List,
     GradientModal,
+    CodeModal,
   },
   methods: {
-    showGradientModal() {
-      this.showingGradientModal = true;
+    showModal(type) {
+      if (type === 'gradient') this.showingGradientModal = true;
+      if (type === 'code') this.showingCodeModal = true;
     },
     closeModals() {
       this.showingGradientModal = false;
+      this.showingCodeModal = false;
     },
     updateGradient(name) {
       const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === name.replace(/\s/g, ''));

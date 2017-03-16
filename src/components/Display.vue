@@ -22,7 +22,7 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
-  props: ['gradient'],
+  props: ['gradient', 'closeModals'],
   components: {
     LeftArrow, RightArrow,
   },
@@ -53,6 +53,10 @@ export default {
         case 32: // shift
           event.preventDefault();
           this.togglePalette();
+          break;
+        case 27: // escape
+          event.preventDefault();
+          this.closeModals();
           break;
         default:
       }

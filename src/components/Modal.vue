@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal__mask" @click="close" v-show="show">
-        <div class="modal__container" @click.stop>
+        <div class="modal__container noselect" @click.stop>
             <slot></slot>
         </div>
     </div>
@@ -17,13 +17,6 @@ export default {
     close() {
       this.onClose();
     },
-  },
-  ready() {
-    document.addEventListener('keydown', (e) => {
-      if (this.show && e.keyCode === 27) {
-        this.onClose();
-      }
-    });
   },
 };
 </script>

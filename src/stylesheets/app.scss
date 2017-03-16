@@ -380,14 +380,16 @@ body {
 }
 
 
-
-
-pre {
+.codeblock {
   height: 105px;
   overflow: auto;
   text-align: left;
   background-color: #F9FAFC;
   font-family: "Source Code Pro", Consolas, monospace;
   margin-bottom: 20px;
-  color: #36c;
+  color: #476da5;
+
+  &__comment { color: #ababab !important; }
+  &__property { color: #2aa198 !important; }
+  &__spec { color: #d33682 !important; }
 }

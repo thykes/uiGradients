@@ -1,7 +1,7 @@
 <template>
   <transition name="modal">
     <div class="modal__mask" @click="close" v-show="show">
-        <div class="modal__container noselect" @click.stop>
+        <div class="modal__container" @click.stop>
             <slot></slot>
         </div>
     </div>

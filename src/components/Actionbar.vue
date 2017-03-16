@@ -17,7 +17,7 @@
       <a href="#" class="trigger noselect">
         Get CSS code
       </a>
-      <a href="#" class="trigger noselect">
+      <a href="#" class="trigger noselect" @click.prevent="showAddGradientModal()">
         Add Gradient
       </a>
     </div>
@@ -33,13 +33,16 @@ import Brackets from '../assets/code.svg';
 
 export default {
   name: 'actionbar',
-  props: ['gradient', 'palette'],
+  props: ['gradient', 'palette', 'showGradientModal', 'closeModals'],
   components: {
     Add, Brackets, Swatch,
   },
   methods: {
     togglePalette() {
       this.$emit('togglePalette');
+    },
+    showAddGradientModal() {
+      this.showGradientModal();
     },
   },
 };

@@ -49,7 +49,7 @@ export default {
         case 39: // right
           this.updateIndex('up');
           break;
-        case 16:
+        // case 16:
         case 32: // shift
           event.preventDefault();
           this.togglePalette();

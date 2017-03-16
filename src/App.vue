@@ -1,9 +1,16 @@
 <template>
   <main id="app">
     <Topbar />
-    <Actionbar :gradient="currentGradient" :palette="showingPalette" @togglePalette="togglePalette" />
+    <Actionbar
+      :gradient="currentGradient"
+      :palette="showingPalette"
+      :showGradientModal="showGradientModal"
+      :closeModals="closeModals"
+      @togglePalette="togglePalette"
+      />
     <List :gradients="gradients" :palette="showingPalette" @updateGradient="updateGradient" />
     <Display :gradient="currentGradient"  @updatedIndex="updateIndex" @togglePalette="togglePalette" />
+    <GradientModal :show="showingGradientModal" :closeModals="closeModals"/>
   </main>
 </template>
 
@@ -14,6 +21,7 @@ import Topbar from './components/Topbar';
 import Actionbar from './components/Actionbar';
 import Display from './components/Display';
 import List from './components/List';
+import GradientModal from './components/GradientModal';
 
 export default {
   name: 'app',
@@ -23,6 +31,7 @@ export default {
       currentGradient: {},
       gradients: [],
       showingPalette: false,
+      showingGradientModal: false,
     };
   },
   components: {
@@ -30,8 +39,15 @@ export default {
     Display,
     Actionbar,
     List,
+    GradientModal,
   },
   methods: {
+    showGradientModal() {
+      this.showingGradientModal = true;
+    },
+    closeModals() {
+      this.showingGradientModal = false;
+    },
     updateGradient(name) {
       const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === name.replace(/\s/g, ''));
       this.index = id;

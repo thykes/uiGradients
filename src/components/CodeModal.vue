@@ -19,7 +19,7 @@
 
 </div>
 
-      <button class="btn" v-clipboard="copyData" @success="handleSuccess" @error="handleError">
+      <button class="btn" v-clipboard="copyData" @success="handleSuccess" >
           Copy Code
       </button>
 
@@ -73,9 +73,6 @@ linear-gradient(to left, ${[...this.gradient.colors].join(', ')}); /* W3C, IE 10
     },
     handleSuccess() {
       this.copied = true;
-    },
-    handleError(e) {
-      console.log(e);
     },
   },
   updated() {

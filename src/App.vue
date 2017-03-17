@@ -41,7 +41,10 @@ export default {
   data() {
     return {
       index: {},
-      currentGradient: {},
+      currentGradient: {
+        name: null,
+        colors: [],
+      },
       gradients: [],
       showingPalette: false,
       showingGradientModal: false,

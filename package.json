@@ -75,6 +75,7 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
+    "vue-clipboards": "^0.2.6",
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
     "vue-svg-loader": "^0.1.2",

@@ -28,7 +28,7 @@ export default {
   },
   computed: {
     backgroundStyle() {
-      const colors = (Object.keys(this.gradient).length === 0) ? ['#888', '#444'].join(', ') : [...this.gradient.colors].reverse().join(', ');
+      const colors = [...this.gradient.colors].reverse().join(', ');
       return {
         background: `linear-gradient(to left, ${colors})`,
       };

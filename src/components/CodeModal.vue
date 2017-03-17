@@ -49,8 +49,8 @@ export default {
   computed: {
     copyData() {
       return `background: ${this.gradient.colors[0]};  /* fallback for old browsers */
--webkit-linear-gradient(to left, ${[...this.gradient.colors].join(', ')});  /* Chrome 10-25, Safari 5.1-6 */
-linear-gradient(to left, ${[...this.gradient.colors].join(', ')}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+-webkit-linear-gradient(to left, ${[...this.gradient.colors].reverse().join(', ')});  /* Chrome 10-25, Safari 5.1-6 */
+linear-gradient(to left, ${[...this.gradient.colors].reverse().join(', ')}); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 `;
     },
   },

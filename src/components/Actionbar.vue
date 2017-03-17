@@ -14,10 +14,10 @@
     </div>
 
     <div class="actionbar__section tar">
-      <a href="#" class="trigger noselect" @click.prevent="showModal('code')" >
+      <a href="#" class="trigger noselect" @click.prevent="openModal('code')" >
         Get CSS code
       </a>
-      <a href="#" class="trigger noselect" @click.prevent="showModal('gradient')" >
+      <a href="#" class="trigger noselect" @click.prevent="openModal('gradient')" >
         Add Gradient
       </a>
     </div>
@@ -41,7 +41,7 @@ export default {
     togglePalette() {
       this.$emit('togglePalette');
     },
-    showModal(type) {
+    openModal(type) {
       this.showModal(type);
     },
   },

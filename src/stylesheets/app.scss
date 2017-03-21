@@ -110,13 +110,26 @@ body {
     font-size: 15px;
 
     &__block {
+      position: relative;
       float: left;
+      cursor: pointer;
       margin-top: 3px;
       margin-right: 3px;
       display: inline-block;
       width: 14px;
       height: 14px;
       background-color: #69D8E7;
+    }
+
+    &__copied {
+      position: absolute;
+      background-color: #eaeaea;
+      padding: 3px 5px;
+      font-size: 12px;
+      border-radius: 3px;
+      margin-left: -27px;
+      bottom: 0;
+      opacity: 0;
     }
 
     .hex__arrow { font-style: 16px !important; }
@@ -408,4 +421,26 @@ body {
   &__comment { color: #ababab !important; }
   &__property { color: #2aa198 !important; }
   &__spec { color: #d33682 !important; }
+}
+
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeup-leave {
+  opacity: 1;
+}
+.fadeup-leave-active {
+  animation: fadeOutUp .5s;
+}
+.fadeup-leave-to {
+  opacity: 0;
 }

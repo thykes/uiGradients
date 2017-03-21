@@ -43,7 +43,7 @@ export default {
       index: {},
       currentGradient: {
         name: null,
-        colors: [],
+        colors: ['#ffffff', '#ffffff'],
       },
       gradients: [],
       showingPalette: false,

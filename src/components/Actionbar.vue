@@ -9,7 +9,7 @@
 
     <div class="actionbar__section actionbar__section--swatch tac">
       <template v-for="(color, index) in gradient.colors">
-        <Swatch :color="color" :class="{'last' : index === (gradient.colors.length - 1)}" />
+        <Swatch :color="color" :class="{'last' : index === (gradient.colors.length - 1)}" :key="{index}"/>
       </template>
     </div>
 

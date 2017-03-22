@@ -14,12 +14,28 @@
     </div>
 
     <div class="actionbar__section tar">
-      <a href="#" class="trigger noselect" @click.prevent="openModal('code')" >
-        Get CSS code
-      </a>
-      <a href="#" class="trigger noselect" @click.prevent="openModal('gradient')" >
-        Add Gradient
-      </a>
+      <ul class="actionbar__nav">
+        <li class="actionbar__nav-item">
+          <a href="#" class="actionbar__nav-link">
+            <Rotate class="actionbar__nav-icon actionbar__nav-icon--rotate" />
+          </a>
+        </li>
+        <li class="actionbar__nav-item">
+          <a href="#" class="actionbar__nav-link" @click.prevent="openModal('code')">
+            <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
+          </a>
+        </li>
+        <li class="actionbar__nav-item">
+          <a href="#" class="actionbar__nav-link" @click.prevent="openModal('gradient')">
+            <Add class="actionbar__nav-icon actionbar__nav-icon--add" />
+          </a>
+        </li>
+        <li class="actionbar__nav-item">
+          <a href="#" class="actionbar__nav-link">
+            <Help class="actionbar__nav-icon actionbar__nav-icon--help" />
+          </a>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
@@ -30,12 +46,14 @@ import Swatch from './Swatch';
 
 import Add from '../assets/add.svg';
 import Brackets from '../assets/code.svg';
+import Rotate from '../assets/direction.svg';
+import Help from '../assets/help.svg';
 
 export default {
   name: 'actionbar',
   props: ['gradient', 'palette', 'showModal'],
   components: {
-    Add, Brackets, Swatch,
+    Rotate, Add, Brackets, Swatch, Help,
   },
   methods: {
     togglePalette() {

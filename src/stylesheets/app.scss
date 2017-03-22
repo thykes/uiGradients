@@ -64,12 +64,54 @@ body {
       display: flex;
       justify-content: center;
     }
-
   }
 
   &__left {
     display: flex;
   }
+
+  &__nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 38px;
+  }
+
+  &__nav-item {
+    margin-left: 10px;
+    position: relative;
+    height: 100%;
+    width: 40px;
+    text-align: center;
+    &:before {
+      content: '|';
+      margin-left: 10px;
+      position: absolute;
+      left: -17px;
+      top: 9px;
+      color: #eaeaea;
+    }
+
+    &:first-child {
+      &:before { content: ''; }
+    }
+  }
+
+  &__nav-link {
+    height: 100%;
+    display: block;
+  }
+
+  &__nav-icon {
+    width: 18px;
+    height: 18px;
+    margin-top: 10px;
+    fill: #3c4859;
+  }
+
 }
 
 

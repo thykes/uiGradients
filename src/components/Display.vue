@@ -22,15 +22,16 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
-  props: ['gradient', 'closeModals'],
+  props: ['gradient', 'direction', 'closeModals', 'updateDirection'],
   components: {
     LeftArrow, RightArrow,
   },
   computed: {
     backgroundStyle() {
       const colors = [...this.gradient.colors].reverse().join(', ');
+      const direction = this.direction;
       return {
-        background: `linear-gradient(to left, ${colors})`,
+        background: `linear-gradient(${direction}, ${colors})`,
       };
     },
   },
@@ -38,6 +39,9 @@ export default {
     updateIndex(dir) {
       this.$emit('updatedIndex', dir);
     },
+    // updateDirection(dir) {
+    //   this.$emit('updatedDirection', dir);
+    // },
     togglePalette() {
       this.$emit('togglePalette');
     },
@@ -48,6 +52,12 @@ export default {
           break;
         case 39: // right
           this.updateIndex('up');
+          break;
+        case 38: // up
+          this.updateDirection('up');
+          break;
+        case 40: // down
+          this.updateDirection('down');
           break;
         // case 16:
         case 32: // shift

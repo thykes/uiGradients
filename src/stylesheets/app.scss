@@ -54,6 +54,7 @@ body {
   align-items: center;
   z-index: 3;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 1px 4px;
 
   &__section {
     flex-grow: 1;
@@ -106,9 +107,9 @@ body {
   }
 
   &__nav-icon {
-    width: 18px;
-    height: 18px;
-    margin-top: 10px;
+    width: 16px;
+    height: 16px;
+    margin-top: 12px;
     fill: #3c4859;
   }
 

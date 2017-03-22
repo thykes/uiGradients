@@ -6,6 +6,7 @@
       :palette="showingPalette"
       :showModal="showModal"
       :closeModals="closeModals"
+      :updateDirection="updateDirection"
       @togglePalette="togglePalette" />
     <List
       :gradients="gradients"
@@ -13,7 +14,9 @@
       @updateGradient="updateGradient" />
     <Display
       :gradient="currentGradient"
+      :direction="currentDirection"
       :closeModals="closeModals"
+      :updateDirection="updateDirection"
       @updatedIndex="updateIndex"
       @togglePalette="togglePalette" />
     <GradientModal
@@ -21,6 +24,7 @@
       :closeModals="closeModals" />
     <CodeModal
       :gradient="currentGradient"
+      :direction="currentDirection"
       :show="showingCodeModal"
       :closeModals="closeModals" />
   </main>
@@ -41,6 +45,9 @@ export default {
   data() {
     return {
       index: {},
+      directionIndex: 0,
+      currentDirection: 'to left',
+      directions: ['to left', 'to bottom', 'to right', 'to top'],
       currentGradient: {
         name: null,
         colors: ['#ffffff', '#ffffff'],
@@ -59,23 +66,28 @@ export default {
     GradientModal,
     CodeModal,
   },
+
   methods: {
     showModal(type) {
       if (type === 'gradient') this.showingGradientModal = true;
       if (type === 'code') this.showingCodeModal = true;
     },
+
     closeModals() {
       this.showingGradientModal = false;
       this.showingCodeModal = false;
     },
+
     updateGradient(name) {
       const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === name.replace(/\s/g, ''));
       this.index = id;
       if (this.showingPalette) this.showingPalette = false;
     },
+
     togglePalette() {
       this.showingPalette = !this.showingPalette;
     },
+
     updateIndex(direction) {
       if (direction === 'up') {
         const updatedIndex = this.index + 1;
@@ -86,6 +98,23 @@ export default {
       }
       this.showingPalette = false;
     },
+
+    updateDirection(dir) {
+      /* eslint-disable max-len  */
+      const currentIndex = this.directions.findIndex(direction => direction === this.currentDirection);
+
+      if (dir === 'up') {
+        let newIndex = currentIndex + 1;
+        newIndex = (newIndex >= this.directions.length) ? 0 : newIndex;
+        this.directionIndex = newIndex;
+      } else if (dir === 'down') {
+        console.log('down');
+        let newIndex = currentIndex - 1;
+        newIndex = (newIndex <= 0) ? this.directions.length - 1 : newIndex;
+        this.directionIndex = newIndex;
+      }
+    },
+
     fetchGradients() {
       const route = 'https://raw.githubusercontent.com/ghosh/uiGradients/master/build/gradients.json';
       axios.get(route).then((response) => {
@@ -96,6 +125,7 @@ export default {
       //   console.log(error);
       // });
     },
+
     setCurrentGradient() {
       this.$on('gradients-loaded', () => {
         if (window.location.hash) {
@@ -107,6 +137,7 @@ export default {
         }
       });
     },
+
     boot() {
       this.fetchGradients();
       this.setCurrentGradient();
@@ -116,6 +147,9 @@ export default {
     index(val) {
       this.currentGradient = this.gradients[val];
       window.location.hash = this.currentGradient.name.replace(/\s/g, '');
+    },
+    directionIndex(id) {
+      this.currentDirection = this.directions[id];
     },
   },
   mounted() {

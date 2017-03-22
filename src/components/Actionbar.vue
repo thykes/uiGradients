@@ -16,7 +16,7 @@
     <div class="actionbar__section tar">
       <ul class="actionbar__nav">
         <li class="actionbar__nav-item">
-          <a href="#" class="actionbar__nav-link">
+          <a href="#" class="actionbar__nav-link" @click.prevent="changeDirection()">
             <Rotate class="actionbar__nav-icon actionbar__nav-icon--rotate" />
           </a>
         </li>
@@ -51,7 +51,7 @@ import Help from '../assets/help.svg';
 
 export default {
   name: 'actionbar',
-  props: ['gradient', 'palette', 'showModal'],
+  props: ['gradient', 'palette', 'showModal', 'updateDirection'],
   components: {
     Rotate, Add, Brackets, Swatch, Help,
   },
@@ -61,6 +61,9 @@ export default {
     },
     openModal(type) {
       this.showModal(type);
+    },
+    changeDirection() {
+      this.updateDirection('up');
     },
   },
 };

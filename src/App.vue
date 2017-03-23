@@ -108,7 +108,6 @@ export default {
         newIndex = (newIndex >= this.directions.length) ? 0 : newIndex;
         this.directionIndex = newIndex;
       } else if (dir === 'down') {
-        console.log('down');
         let newIndex = currentIndex - 1;
         newIndex = (newIndex <= 0) ? this.directions.length - 1 : newIndex;
         this.directionIndex = newIndex;

@@ -87,7 +87,7 @@ body {
     height: 100%;
     width: 40px;
     text-align: center;
-    &:before {
+    &:not(:first-child):before {
       content: '|';
       margin-left: 10px;
       position: absolute;
@@ -95,15 +95,17 @@ body {
       top: 9px;
       color: #eaeaea;
     }
-
-    &:first-child {
-      &:before { content: ''; }
-    }
   }
 
   &__nav-link {
-    height: 100%;
-    display: block;
+    // height: 100%;
+    // display: block;
+    padding: 7px 8px 3px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
   }
 
   &__nav-icon {

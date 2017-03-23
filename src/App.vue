@@ -37,8 +37,8 @@ import Topbar from './components/Topbar';
 import Actionbar from './components/Actionbar';
 import Display from './components/Display';
 import List from './components/List';
-import GradientModal from './components/GradientModal';
-import CodeModal from './components/CodeModal';
+import GradientModal from './components/modals/GradientModal';
+import CodeModal from './components/modals/CodeModal';
 
 export default {
   name: 'app',

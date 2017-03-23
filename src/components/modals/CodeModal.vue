@@ -28,7 +28,7 @@
 
 
 <script>
-import Modal from './Modal';
+import Modal from '../Modal';
 
 export default {
   name: 'codemodal',

@@ -7,12 +7,13 @@
 <script>
 export default {
   name: 'palette',
-  props: ['gradient'],
+  props: ['gradient', 'direction'],
   computed: {
     backgroundStyle() {
-      const colors = [...this.gradient.colors];
+      const colors = [...this.gradient.colors].reverse();
+      const direction = this.direction;
       return {
-        background: `linear-gradient(to left, ${colors})`,
+        background: `linear-gradient(${direction}, ${colors})`,
       };
     },
   },

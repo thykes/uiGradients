@@ -30,11 +30,11 @@
             <Add class="actionbar__nav-icon actionbar__nav-icon--add" />
           </a>
         </li>
-        <li class="actionbar__nav-item">
+        <!-- <li class="actionbar__nav-item">
           <a href="#" class="actionbar__nav-link">
             <Help class="actionbar__nav-icon actionbar__nav-icon--help" />
           </a>
-        </li>
+        </li> -->
       </ul>
     </div>
   </section>

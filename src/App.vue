@@ -10,6 +10,7 @@
       @togglePalette="togglePalette" />
     <List
       :gradients="gradients"
+      :direction="currentDirection"
       :palette="showingPalette"
       @updateGradient="updateGradient" />
     <Display
@@ -31,14 +32,14 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 import Topbar from './components/Topbar';
 import Actionbar from './components/Actionbar';
 import Display from './components/Display';
 import List from './components/List';
 import GradientModal from './components/modals/GradientModal';
 import CodeModal from './components/modals/CodeModal';
+
+import G from '../gradients.json';
 
 export default {
   name: 'app',
@@ -91,10 +92,10 @@ export default {
     updateIndex(direction) {
       if (direction === 'up') {
         const updatedIndex = this.index + 1;
-        this.index = (updatedIndex >= this.gradients.length - 1) ? 0 : updatedIndex;
+        this.index = (updatedIndex > this.gradients.length - 1) ? 0 : updatedIndex;
       } else if (direction === 'down') {
         const updatedIndex = this.index - 1;
-        this.index = (updatedIndex <= 0) ? this.gradients.length - 1 : updatedIndex;
+        this.index = (updatedIndex < 0) ? this.gradients.length - 1 : updatedIndex;
       }
       this.showingPalette = false;
     },
@@ -115,26 +116,17 @@ export default {
     },
 
     fetchGradients() {
-      const route = 'https://raw.githubusercontent.com/ghosh/uiGradients/master/build/gradients.json';
-      axios.get(route).then((response) => {
-        this.gradients = response.data;
-        this.$emit('gradients-loaded');
-      });
-      // .catch((error) => {
-      //   console.log(error);
-      // });
+      this.gradients = G.reverse();
     },
 
     setCurrentGradient() {
-      this.$on('gradients-loaded', () => {
-        if (window.location.hash) {
-          const gradientName = window.location.hash.substring(1);
-          this.updateGradient(gradientName);
-        } else {
-          const randomId = Math.floor(Math.random() * this.gradients.length);
-          this.index = randomId;
-        }
-      });
+      if (window.location.hash) {
+        const gradientName = window.location.hash.substring(1);
+        this.updateGradient(gradientName);
+      } else {
+        const randomId = Math.floor(Math.random() * this.gradients.length);
+        this.index = randomId;
+      }
     },
 
     boot() {

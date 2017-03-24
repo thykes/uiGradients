@@ -3,7 +3,10 @@
     <ul class="palette__list">
 
       <li class="palette__item" v-for="gradient in gradients">
-        <Palette :gradient="gradient" @updateGradient="updateGradient" />
+        <Palette
+          :gradient="gradient"
+          :direction="direction"
+          @updateGradient="updateGradient" />
       </li>
 
     </ul>
@@ -15,7 +18,7 @@ import Palette from './Palette';
 
 export default {
   name: 'list',
-  props: ['gradients', 'palette'],
+  props: ['gradients', 'palette', 'direction'],
   components: {
     Palette,
   },

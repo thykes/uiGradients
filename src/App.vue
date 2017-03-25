@@ -46,8 +46,8 @@ export default {
   data() {
     return {
       index: {},
-      directionIndex: 1,
-      currentDirection: 'to bottom',
+      directionIndex: 0,
+      currentDirection: 'to left',
       directions: ['to left', 'to bottom', 'to right', 'to top'],
       currentGradient: {
         name: null,
@@ -110,7 +110,7 @@ export default {
         this.directionIndex = newIndex;
       } else if (dir === 'down') {
         let newIndex = currentIndex - 1;
-        newIndex = (newIndex <= 0) ? this.directions.length - 1 : newIndex;
+        newIndex = (newIndex < 0) ? this.directions.length - 1 : newIndex;
         this.directionIndex = newIndex;
       }
     },

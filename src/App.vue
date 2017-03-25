@@ -46,8 +46,8 @@ export default {
   data() {
     return {
       index: {},
-      directionIndex: 0,
-      currentDirection: 'to left',
+      directionIndex: 1,
+      currentDirection: 'to bottom',
       directions: ['to left', 'to bottom', 'to right', 'to top'],
       currentGradient: {
         name: null,

@@ -49,8 +49,8 @@ export default {
   data() {
     return {
       index: {},
-      directionIndex: 0,
-      currentDirection: 'to left',
+      directionIndex: 2,
+      currentDirection: 'to right',
       directions: ['to left', 'to bottom', 'to right', 'to top'],
       currentGradient: {
         name: null,
@@ -105,7 +105,7 @@ export default {
 
     updateDirection(dir) {
       /* eslint-disable max-len  */
-      const currentIndex = this.directions.findIndex(direction => direction === this.currentDirection);
+      const currentIndex = this.directionIndex;
 
       if (dir === 'up') {
         let newIndex = currentIndex + 1;

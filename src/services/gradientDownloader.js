@@ -1,4 +1,8 @@
 import { saveAs } from 'file-saver';
+import toBlob from 'canvas-to-blob';
+
+toBlob.init();
+
 
 export default function (name, color1, color2) {
   const canvas = document.createElement('canvas');

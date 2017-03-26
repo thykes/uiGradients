@@ -1,7 +1,7 @@
 import { saveAs } from 'file-saver';
 import toBlob from 'canvas-to-blob';
 
-// Adds toBlob polyfill to safari
+// Adds toBlob polyfill (for safari)
 toBlob.init();
 
 export default function (direction, name, ...colors) {

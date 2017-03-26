@@ -887,5 +887,9 @@
     {
         "name": "Steel",
         "colors": ["#9393A5", "#C0C0CB"]
+    },
+    {
+        "name": "Stripe",
+        "colors": ["#1FA2FF", "#21DCF6", "#A6FFCB"]
     }
 ]

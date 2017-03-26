@@ -121,8 +121,7 @@ export default {
     downloadGradient() {
       Download(
         this.currentGradient.name,
-        this.currentGradient.colors[0],
-        this.currentGradient.colors[1],
+        ...this.currentGradient.colors,
       );
     },
 

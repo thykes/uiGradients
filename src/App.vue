@@ -6,6 +6,7 @@
       :palette="showingPalette"
       :showModal="showModal"
       :closeModals="closeModals"
+      :downloadGradient="downloadGradient"
       :updateDirection="updateDirection"
       @togglePalette="togglePalette" />
     <List
@@ -38,6 +39,8 @@ import Display from './components/Display';
 import List from './components/List';
 import GradientModal from './components/modals/GradientModal';
 import CodeModal from './components/modals/CodeModal';
+
+import Download from './services/gradientDownloader';
 
 import G from '../gradients.json';
 
@@ -113,6 +116,14 @@ export default {
         newIndex = (newIndex < 0) ? this.directions.length - 1 : newIndex;
         this.directionIndex = newIndex;
       }
+    },
+
+    downloadGradient() {
+      Download(
+        this.currentGradient.name,
+        this.currentGradient.colors[0],
+        this.currentGradient.colors[1],
+      );
     },
 
     fetchGradients() {

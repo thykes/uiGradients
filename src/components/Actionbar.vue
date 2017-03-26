@@ -21,6 +21,11 @@
           </a>
         </li>
         <li class="actionbar__nav-item">
+          <a href="#downloadGradient" class="actionbar__nav-link" @click.prevent="download()">
+            <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
+          </a>
+        </li>
+        <li class="actionbar__nav-item">
           <a href="#openCodeModal" class="actionbar__nav-link" @click.prevent="openModal('code')">
             <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
           </a>
@@ -48,12 +53,13 @@ import Add from '../assets/add.svg';
 import Brackets from '../assets/code.svg';
 import Rotate from '../assets/direction.svg';
 import Help from '../assets/help.svg';
+import Download from '../assets/download.svg';
 
 export default {
   name: 'actionbar',
-  props: ['gradient', 'palette', 'showModal', 'updateDirection'],
+  props: ['gradient', 'palette', 'showModal', 'updateDirection', 'downloadGradient'],
   components: {
-    Rotate, Add, Brackets, Swatch, Help,
+    Rotate, Add, Brackets, Swatch, Help, Download,
   },
   methods: {
     togglePalette() {
@@ -64,6 +70,9 @@ export default {
     },
     changeDirection() {
       this.updateDirection('up');
+    },
+    download() {
+      this.downloadGradient();
     },
   },
 };

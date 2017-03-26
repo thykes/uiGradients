@@ -120,6 +120,7 @@ export default {
 
     downloadGradient() {
       Download(
+        this.currentDirection,
         this.currentGradient.name,
         ...this.currentGradient.colors,
       );

@@ -4,7 +4,7 @@ import toBlob from 'canvas-to-blob';
 // Adds toBlob polyfill to safari
 toBlob.init();
 
-export default function (name, ...colors) {
+export default function (direction, name, ...colors) {
   const canvas = document.createElement('canvas');
 
   canvas.id = 'canva';
@@ -17,7 +17,23 @@ export default function (name, ...colors) {
   const canva = document.getElementById('canva');
   const ctx = canva.getContext('2d');
 
-  const grd = ctx.createLinearGradient(0, 0, 1200, 800);
+  const coordinates = (gradientDir) => {
+    switch (gradientDir) {
+      case 'to left':
+        return [canvas.width, canvas.height, 0, canvas.height];
+      case 'to right':
+        return [0, canvas.height, canvas.width, canvas.height];
+      case 'to top':
+        return [0, canvas.height, 0, 0];
+      case 'to bottom':
+        return [canvas.width, 0, canvas.width, canvas.height];
+      default:
+        return [];
+    }
+  };
+
+  const dir = coordinates(direction);
+  const grd = ctx.createLinearGradient(...dir);
 
   // colors.forEach((color, index) => {
   //   grd.addColorStop((1 / index), color);

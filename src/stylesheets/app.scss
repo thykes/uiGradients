@@ -301,7 +301,6 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 8px;
   padding-bottom: 8px;
   overflow: scroll;
   box-sizing: border-box;
@@ -489,4 +488,31 @@ body {
 }
 .fadeup-leave-to {
   opacity: 0;
+}
+
+
+
+.shortlist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 70px;
+  padding: 0 20px;
+
+  &__item {
+    height: 40px;
+    border-radius: 3px;
+    flex-basis: 10%;
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
 }

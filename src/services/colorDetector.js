@@ -1,13 +1,7 @@
 import hexToHsl from 'hex-to-hsl';
 
 export default function (hexColor) {
-  let hue = null;
-  let sat = null;
-  let lgt = null;
-
-  [hue, sat, lgt] = hexToHsl(hexColor);
-
-  console.log((hue / 100), (sat / 100), lgt);
+  const [hue, sat, lgt] = hexToHsl(hexColor);
 
   if ((lgt / 100) < 0.2) return 'Blacks';
   if ((lgt / 100) > 0.85) return 'Whites';

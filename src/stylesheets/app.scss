@@ -507,12 +507,23 @@ body {
     height: 40px;
     border-radius: 3px;
     flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+      border: solid 2px #fafafa;
+    }
   }
 
   &__link {
     display: block;
-    width: 100%;
-    height: 100%;
+    text-decoration: none;
+    color: #fafafa;
+    font-family: "Source Code Pro", monospace;
+    font-size: 12px;
+    // width: 100%;
+    // height: 100%;
   }
 
 }

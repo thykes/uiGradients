@@ -21,11 +21,6 @@
           </a>
         </li>
         <li class="actionbar__nav-item">
-          <a href="#downloadGradient" class="actionbar__nav-link" @click.prevent="download()">
-            <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
-          </a>
-        </li>
-        <li class="actionbar__nav-item">
           <a href="#openCodeModal" class="actionbar__nav-link" @click.prevent="openModal('code')">
             <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
           </a>
@@ -33,6 +28,11 @@
         <li class="actionbar__nav-item">
           <a href="#OpenGradientModal" class="actionbar__nav-link" @click.prevent="openModal('gradient')">
             <Add class="actionbar__nav-icon actionbar__nav-icon--add" />
+          </a>
+        </li>
+        <li class="actionbar__nav-item">
+          <a href="#downloadGradient" class="actionbar__nav-link" @click.prevent="download()">
+            <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
           </a>
         </li>
         <!-- <li class="actionbar__nav-item">

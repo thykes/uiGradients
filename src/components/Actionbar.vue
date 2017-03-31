@@ -51,7 +51,7 @@ import Swatch from './Swatch';
 
 import Add from '../assets/add.svg';
 import Brackets from '../assets/code.svg';
-import Rotate from '../assets/direction.svg';
+import Rotate from '../assets/rotate.svg';
 import Help from '../assets/help.svg';
 import Download from '../assets/download.svg';
 
@@ -69,7 +69,7 @@ export default {
       this.showModal(type);
     },
     changeDirection() {
-      this.updateDirection('up');
+      this.updateDirection('down');
     },
     download() {
       this.downloadGradient();

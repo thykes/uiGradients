@@ -338,7 +338,7 @@ body {
       border-radius: 3px;
       transform: scale(1.02);
       .palette__name {
-        text-decoration: underline;
+        border-bottom: solid 1px rgba(234, 234, 234, 0.49);
       }
     }
 
@@ -358,7 +358,6 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    line-height: 130px;
     font-family: "Source Code Pro", monospace;
     font-size: 15px;
   }
@@ -510,6 +509,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
 
     &.active {
       border: solid 2px #fafafa;
@@ -522,6 +523,10 @@ body {
     color: #fafafa;
     font-family: "Source Code Pro", monospace;
     font-size: 12px;
+
+    &:hover {
+      text-decoration: underline;
+    }
     // width: 100%;
     // height: 100%;
   }

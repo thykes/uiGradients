@@ -301,7 +301,6 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 8px;
   padding-bottom: 8px;
   overflow: scroll;
   box-sizing: border-box;
@@ -339,7 +338,7 @@ body {
       border-radius: 3px;
       transform: scale(1.02);
       .palette__name {
-        text-decoration: underline;
+        border-bottom: solid 1px rgba(234, 234, 234, 0.49);
       }
     }
 
@@ -359,7 +358,6 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    line-height: 130px;
     font-family: "Source Code Pro", monospace;
     font-size: 15px;
   }
@@ -489,4 +487,48 @@ body {
 }
 .fadeup-leave-to {
   opacity: 0;
+}
+
+
+
+.shortlist {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 70px;
+  padding: 0 20px;
+
+  &__item {
+    height: 40px;
+    border-radius: 3px;
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    &.active {
+      border: solid 2px #fafafa;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: #fafafa;
+    font-family: "Source Code Pro", monospace;
+    font-size: 12px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+    // width: 100%;
+    // height: 100%;
+  }
+
 }

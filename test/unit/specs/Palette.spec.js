@@ -18,16 +18,13 @@ describe('Palette.vue', () => {
     .to.equal(true);
   });
 
-  it('should render a the gradient name', () => {
-    expect(wrapper.contains('.palette__name'))
-    .to.equal(true);
+  it('should render the gradient name', () => {
+    expect(wrapper.contains('.palette__name')).to.equal(true);
+    expect(wrapper.text()).to.equal('Stripe');
   });
 
-  /**
-   * Useless test, figure out a way to test computed properties
-   */
-  it('should compute the background style', () => {
-    expect(wrapper.vm.backgroundStyle)
-    .to.equal(wrapper.vm.backgroundStyle);
+  it('should have a gradient as background style', () => {
+    expect(wrapper.hasStyle('background', 'linear-gradient(to left, #1FA2FF,#21DCF6,#A6FFCB)'))
+    .to.equal(true);
   });
 });

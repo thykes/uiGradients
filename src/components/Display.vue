@@ -22,7 +22,7 @@ import RightArrow from '../assets/rightchev.svg';
 
 export default {
   name: 'display',
-  props: ['gradient', 'direction', 'closeModals', 'updateDirection'],
+  props: ['gradient', 'direction', 'closeModals', 'updateDirection', 'showModal'],
   components: {
     LeftArrow, RightArrow,
   },
@@ -39,11 +39,11 @@ export default {
     updateIndex(dir) {
       this.$emit('updatedIndex', dir);
     },
-    // updateDirection(dir) {
-    //   this.$emit('updatedDirection', dir);
-    // },
     togglePalette() {
       this.$emit('togglePalette');
+    },
+    closePalette() {
+      this.$emit('closePalette');
     },
     handleKeyboardEvents(event) {
       switch (event.which) {
@@ -59,13 +59,22 @@ export default {
         case 40: // down
           this.updateDirection('down');
           break;
-        // case 16:
-        case 32: // shift
+        case 16: // shift
           event.preventDefault();
+          this.closeModals();
           this.togglePalette();
+          break;
+        case 13: // enter
+          this.closeModals();
+          this.showModal('code');
+          break;
+        case 32: // space
+          this.closeModals();
+          this.showModal('gradient');
           break;
         case 27: // escape
           event.preventDefault();
+          this.closePalette();
           this.closeModals();
           break;
         default:

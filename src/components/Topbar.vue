@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Logo from '../assets/logo2.svg';
+import Logo from '../assets/logo.svg';
 import Facebook from '../assets/facebook.svg';
 import Twitter from '../assets/twitter.svg';
 import Github from '../assets/github.svg';

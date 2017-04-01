@@ -19,7 +19,9 @@
       :direction="currentDirection"
       :closeModals="closeModals"
       :updateDirection="updateDirection"
+      :showModal="showModal"
       @updatedIndex="updateIndex"
+      @closePalette="closePalette"
       @togglePalette="togglePalette" />
     <GradientModal
       :show="showingGradientModal"
@@ -86,6 +88,10 @@ export default {
       const id = this.gradients.findIndex(gradient => gradient.name.replace(/\s/g, '') === name.replace(/\s/g, ''));
       this.index = id;
       if (this.showingPalette) this.showingPalette = false;
+    },
+
+    closePalette() {
+      this.showingPalette = false;
     },
 
     togglePalette() {

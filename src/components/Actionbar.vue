@@ -51,7 +51,7 @@
             <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
           </a>
         </li>
-        <!-- <li class="actionbar__nav-item">
+<!--         <li class="actionbar__nav-item">
           <a href="#" class="actionbar__nav-link">
             <Help class="actionbar__nav-icon actionbar__nav-icon--help" />
           </a>

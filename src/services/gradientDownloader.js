@@ -8,8 +8,8 @@ export default function (direction, name, ...colors) {
   const canvas = document.createElement('canvas');
 
   canvas.id = 'canva';
-  canvas.width = 1200;
-  canvas.height = 800;
+  canvas.width = screen.width;
+  canvas.height = screen.height;
   canvas.style.zIndex = 1;
   canvas.style.position = 'absolute';
   document.body.appendChild(canvas);
@@ -69,7 +69,7 @@ export default function (direction, name, ...colors) {
   }
 
   ctx.fillStyle = grd;
-  ctx.fillRect(0, 0, 1200, 800);
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   canvas.toBlob((blob) => {
     saveAs(blob, `${name}.jpg`);

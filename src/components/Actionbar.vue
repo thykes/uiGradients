@@ -16,22 +16,38 @@
     <div class="actionbar__section tar">
       <ul class="actionbar__nav">
         <li class="actionbar__nav-item">
-          <a href="#changeGradientDirection" class="actionbar__nav-link" @click.prevent="changeDirection()">
+          <a 
+            href="#changeGradientDirection"
+            class="actionbar__nav-link"
+            @click.prevent="changeDirection()"
+            data-tooltip="Rotate gradient">
             <Rotate class="actionbar__nav-icon actionbar__nav-icon--rotate" />
           </a>
         </li>
         <li class="actionbar__nav-item">
-          <a href="#openCodeModal" class="actionbar__nav-link" @click.prevent="openModal('code')">
+          <a 
+          href="#openCodeModal" 
+          class="actionbar__nav-link" 
+          @click.prevent="openModal('code')"
+          data-tooltip="Get css code">
             <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
           </a>
         </li>
         <li class="actionbar__nav-item">
-          <a href="#OpenGradientModal" class="actionbar__nav-link" @click.prevent="openModal('gradient')">
+          <a 
+            href="#OpenGradientModal" 
+            class="actionbar__nav-link" 
+            @click.prevent="openModal('gradient')"
+            data-tooltip="Add gradient">
             <Add class="actionbar__nav-icon actionbar__nav-icon--add" />
           </a>
         </li>
         <li class="actionbar__nav-item">
-          <a href="#downloadGradient" class="actionbar__nav-link" @click.prevent="download()">
+          <a 
+            href="#downloadGradient" 
+            class="actionbar__nav-link" 
+            @click.prevent="download()"
+            data-tooltip="Download">
             <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
           </a>
         </li>

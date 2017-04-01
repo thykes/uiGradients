@@ -769,8 +769,14 @@
         "colors": ["#67B26F", "#4ca2cd"]
     },
     {
+
         "name": "Vice City",
         "colors": ["#3494E6", "#EC6EAD"]
+    },
+    {
+        "name": "Jaipur",
+        "colors": ["#DBE6F6", "#C5796D"]
+
     },
     {
         "name": "Cocoaa Ice",
@@ -885,11 +891,20 @@
         "colors": ["#159957", "#155799"]
     },
     {
-        "name": "Steel",
-        "colors": ["#9393A5", "#C0C0CB"]
+        "name": "Mello",
+        "colors": ["#c0392b", "#8e44ad"]
     },
     {
-        "name": "Stripe",
-        "colors": ["#1FA2FF", "#21DCF6", "#A6FFCB"]
+        "name": "Compare Now",
+        "colors": ["#EF3B36", "#FFFFFF"]
+    },
+    {
+        "name": "Meridian",
+        "colors": ["#283c86", "#45a247"]
+    },
+    {
+        "name": "Alive",
+        "colors": ["#CB356B", "#BD3F32"]
     }
+
 ]

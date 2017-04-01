@@ -1,5 +1,11 @@
 <template>
   <main id="app">
+    <transition name="fade">
+      <template v-if="preloading">
+        <Preload />
+      </template>
+    </transition>
+    
     <Topbar />
     <Actionbar
       :gradient="currentGradient"
@@ -35,6 +41,7 @@
 </template>
 
 <script>
+import Preload from './components/Preload';
 import Topbar from './components/Topbar';
 import Actionbar from './components/Actionbar';
 import Display from './components/Display';
@@ -44,13 +51,14 @@ import CodeModal from './components/modals/CodeModal';
 
 import Download from './services/gradientDownloader';
 
-import G from '../gradients.json';
+import Gradients from '../gradients.json';
 
 export default {
   name: 'app',
   data() {
     return {
       index: {},
+      preloading: true,
       directionIndex: 2,
       currentDirection: 'to right',
       directions: ['to left', 'to bottom', 'to right', 'to top'],
@@ -65,6 +73,7 @@ export default {
     };
   },
   components: {
+    Preload,
     Topbar,
     Display,
     Actionbar,
@@ -133,7 +142,7 @@ export default {
     },
 
     fetchGradients() {
-      this.gradients = G.reverse();
+      this.gradients = Gradients.reverse();
     },
 
     setCurrentGradient() {
@@ -146,9 +155,17 @@ export default {
       }
     },
 
+    fadePreloader() {
+      const app = this;
+      setTimeout(() => {
+        app.preloading = false;
+      }, 1500);
+    },
+
     boot() {
       this.fetchGradients();
       this.setCurrentGradient();
+      this.fadePreloader();
     },
   },
   watch: {

@@ -29,7 +29,7 @@
           href="#openCodeModal" 
           class="actionbar__nav-link" 
           @click.prevent="openModal('code')"
-          data-tooltip="Get css code">
+          data-tooltip="Get css">
             <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
           </a>
         </li>
@@ -47,7 +47,7 @@
             href="#downloadGradient" 
             class="actionbar__nav-link" 
             @click.prevent="download()"
-            data-tooltip="Download">
+            data-tooltip="Get .jpg">
             <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
           </a>
         </li>

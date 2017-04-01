@@ -1,6 +1,9 @@
 import { mount } from 'avoriaz';
 import Palette from '@/components/Palette';
 
+
+const clickHandler = sinon.stub();
+
 const wrapper = mount(Palette, {
   propsData: {
     direction: 'to left',
@@ -9,6 +12,7 @@ const wrapper = mount(Palette, {
       name: 'Stripe',
     },
     palletes: ['Cyans', 'Cyans', 'Greens'],
+    updateGradient: clickHandler,
   },
 });
 

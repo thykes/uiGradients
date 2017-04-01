@@ -1,5 +1,5 @@
 <template>
-  <div class="palette__gradient" :style="backgroundStyle" @click.prevent="updateGradient(gradient.name)">
+  <div class="palette__gradient" :style="backgroundStyle" @click.prevent="changeGradient(gradient.name)">
       <p class="palette__name">{{ gradient.name }}</p>
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'palette',
-  props: ['gradient', 'direction'],
+  props: ['gradient', 'direction', 'updateGradient'],
   computed: {
     backgroundStyle() {
       const colors = [...this.gradient.colors];
@@ -18,8 +18,8 @@ export default {
     },
   },
   methods: {
-    updateGradient(name) {
-      this.$emit('updateGradient', name);
+    changeGradient(name) {
+      this.updateGradient(name);
     },
   },
 };

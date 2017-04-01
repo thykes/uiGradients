@@ -13,7 +13,7 @@
       :gradients="gradients"
       :direction="currentDirection"
       :palette="showingPalette"
-      @updateGradient="updateGradient" />
+      :updateGradient="updateGradient" />
     <Display
       :gradient="currentGradient"
       :direction="currentDirection"

@@ -9,37 +9,6 @@
           </a>
         </li>
       </template>
-<!--       <li class="shortlist__item" style="background-color:red;" @click="filterGradients('reds')" :class="{ active: isActiveShortlist('reds')}">
-        <a href="#" class="shortlist__link" v-if="currentFilter === 'reds'" @click.prevent.stop="clearFilter()">
-          clear
-        </a>
-      </li>
-      <li class="shortlist__item" style="background-color:#ffd200;" @click="filterGradients('yellows')" :class="{ active: isActiveShortlist('yellows')}">
-        <a href="#" class="shortlist__link" v-if="currentFilter === 'reds'" @click.prevent.stop="clearFilter()">
-          clear
-        </a>
-      </li>
-      <li class="shortlist__item" style="background-color:#159957;" @click="filterGradients('greens')" :class="{ active: isActiveShortlist('greens')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#1cb5e0;" @click="filterGradients('cyans')" :class="{ active: isActiveShortlist('cyans')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#155799;" @click="filterGradients('blues')" :class="{ active: isActiveShortlist('blues')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#ef32d9;" @click="filterGradients('magentas')" :class="{ active: isActiveShortlist('magentas')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#fff;" @click="filterGradients('whites')" :class="{ active: isActiveShortlist('whites')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#c0c0cb;" @click="filterGradients('grays')" :class="{ active: isActiveShortlist('grays')}">
-        <a href="#" class="shortlist__link"></a>
-      </li>
-      <li class="shortlist__item" style="background-color:#333;" @click="filterGradients('blacks')" :class="{ active: isActiveShortlist('blacks')}">
-        <a href="#" class="shortlist__link"></a>
-      </li> -->
     </ul>
 
     <ul class="palette__list">
@@ -48,7 +17,7 @@
         <Palette
           :gradient="gradient"
           :direction="direction"
-          @updateGradient="updateGradient" />
+          :updateGradient="changeGradient" />
       </li>
 
     </ul>
@@ -61,7 +30,7 @@ import detect from '../services/colorDetector';
 
 export default {
   name: 'list',
-  props: ['gradients', 'palette', 'direction'],
+  props: ['gradients', 'palette', 'direction', 'updateGradient'],
   components: {
     Palette,
   },
@@ -85,8 +54,8 @@ export default {
     isActiveShortlist(color) {
       return (this.currentFilter === color);
     },
-    updateGradient(name) {
-      this.$emit('updateGradient', name);
+    changeGradient(name) {
+      this.updateGradient(name);
     },
     clearFilter() {
       this.filterGradients(false);

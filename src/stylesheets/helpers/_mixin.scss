@@ -1,3 +1,14 @@
+/**
+ * Uses $breakpoints from _breakpoints.scss
+ */
+@mixin respond-to($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value != null {
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+}
 
 @mixin clearfix() {
   &::before,
@@ -37,14 +48,7 @@
       border-radius: $border-radius;
     }
 
-    -webkit-transition-property: background-color, -webkit-transform;
-    -moz-transition-property: background-color, -moz-transform;
-    -o-transition-property: background-color, -o-transform;
     transition-property: background-color, transform;
-
-    -webkit-transition-duration: $transition-duration;
-    -moz-transition-duration: $transition-duration;
-    -o-transition-duration: $transition-duration;
     transition-duration: $transition-duration;
   }
 
@@ -53,13 +57,8 @@
     content: "";
   }
 
-  &:before {
-    top: -($height + $gutter);
-  }
-
-  &:after {
-    top: $height + $gutter;
-  }
+  &:before { top: -($height + $gutter); }
+  &:after { top: $height + $gutter; }
 }
 
 
@@ -74,21 +73,15 @@
 }
 
 @mixin burger-top {
-  &:before {
-    @content;
-  }
+  &:before { @content; }
 }
 
 @mixin burger-middle {
-  & {
-    @content;
-  }
+  & { @content; }
 }
 
 @mixin burger-bottom {
-  &:after {
-    @content;
-  }
+  &:after { @content; }
 }
 
 
@@ -97,21 +90,7 @@
  */
 
  @mixin burger-to-cross {
-  & {
-    background-color: transparent !important;
-  }
-  &:before {
-    -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    -moz-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    -o-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-  }
-  &:after {
-    -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-    -moz-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-    -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-    -o-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-    transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
-  }
+  & { background-color: transparent !important; }
+  &:before { transform: translateY($burger-gutter + $burger-height) rotate(45deg); }
+  &:after { transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg); }
 }

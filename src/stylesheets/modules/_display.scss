@@ -19,6 +19,8 @@
     color: #fff;
     font-size: 20px;
     margin-top: 0;
+    text-align: center;
+    width: 300px;
   }
 
   &__footer {
@@ -33,6 +35,8 @@
   &__byline {
     @include font-smoothing();
     color: #fff;
+    width: 300px;
+    text-align: center;
     a {
       color: inherit;
       text-decoration: none;

@@ -1,7 +1,7 @@
 <template>
   <section class="actionbar">
     <div class="actionbar__section">
-        <a href="#" :class="{ 'burger': true, 'menu': true , 'is-active': palette}" @click.prevent="togglePalette()">
+        <a href="#" :class="{ 'burger': true, 'actionbar__burger': true, 'menu': true , 'is-active': palette}" @click.prevent="togglePalette()">
             <span class="menu__icon"></span>
             Show all gradients
         </a>

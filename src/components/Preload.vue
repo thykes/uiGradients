@@ -8,11 +8,11 @@
           <polygon id="a" points=".079 .082 12.554 .082 12.554 18.317 .079 18.317 .079 .082"/>
           <polygon id="c" points=".022 .082 12.498 .082 12.498 18.317 .022 18.317 .022 .082"/>
           <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%" > 
-            <stop offset="0%" stop-color="#C02425">
-                <animate attributeName="stop-color" values="#C02425; #F0CB35; #C02425" dur="4s" repeatCount="indefinite"></animate>
+            <stop offset="0%" stop-color="#a044ff">
+                <animate attributeName="stop-color" values="#a044ff; #6a3093; #a044ff" dur="4s" repeatCount="indefinite"></animate>
             </stop>
-            <stop offset="100%" stop-color="#F0CB35">
-                <animate attributeName="stop-color" values="#F0CB35; #C02425; #F0CB35" dur="4s" repeatCount="indefinite"></animate>
+            <stop offset="100%" stop-color="#6a3093">
+                <animate attributeName="stop-color" values="#6a3093; #a044ff; #6a3093" dur="4s" repeatCount="indefinite"></animate>
             </stop>
           </linearGradient> 
         </defs>
@@ -61,9 +61,9 @@ export default {
       messages: [
         'Use the left and right arrow keys to quickly navigate between gradients',
         'Use the top and bottom arrow keys to change gradient direction',
-        'Click on the colored square next to hex value to copy to clipboard',
+        'Click the colored square next to hex value to copy to clipboard',
         'Hit the shift key to see all gradients',
-        'Hit the enter key to get the css code for the gradinet',
+        'Press the enter key to get the css code for the gradient',
       ],
     };
   },

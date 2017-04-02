@@ -21,7 +21,7 @@ import Clipboard from 'clipboard';
 
 export default {
   name: 'swatch',
-  props: ['color'],
+  props: ['color', 'gradient'],
   data() {
     let c = this.color;
     c = c.substring(1);
@@ -45,10 +45,15 @@ export default {
       this.copied = false;
     },
     copy() {
+      this.$ga.trackEvent('copy hex', 'click', this.gradient.name);
       this.copied = true;
       setTimeout(this.uncopy, 10);
     },
   },
+  /**
+   * Changes instance of clipboard to force
+   * re-evaluation of text to copy
+   */
   updated() {
     let c = this.color;
     c = c.substring(1);

@@ -1,7 +1,7 @@
 {
   "name": "uigradients",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
+  "version": "2.0.0",
+  "description": "Beautiful color gradients for design and code",
   "author": "Indrashish Ghosh <mail@indrashishghosh.com>",
   "private": true,
   "scripts": {
@@ -14,7 +14,6 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "hex-to-hsl": "^1.0.2",
     "vue": "^2.2.2"
   },
   "devDependencies": {
@@ -54,6 +53,7 @@
     "function-bind": "^1.1.0",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
+    "hex-to-hsl": "^1.0.2",
     "inject-loader": "^3.0.0-beta4",
     "karma": "^1.4.1",
     "karma-coverage": "^1.1.1",
@@ -78,6 +78,7 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
+    "vue-analytics": "^3.2.0",
     "vue-clipboards": "^0.2.6",
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
@@ -94,8 +95,8 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
+    // "> 1%",
+    "last 4 versions",
     "not ie <= 8"
   ]
 }

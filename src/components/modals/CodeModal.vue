@@ -78,6 +78,7 @@ background: linear-gradient(${this.direction}, ${[...this.gradient.colors].rever
     },
     handleSuccess() {
       const self = this;
+      this.$ga.trackEvent('copy css', 'click', this.gradient.name);
       this.copied = true;
       setTimeout(() => { self.copied = false; }, 1000);
     },

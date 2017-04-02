@@ -61,6 +61,7 @@ export default {
       this.filterGradients(false);
     },
     filterGradients(name) {
+      this.$ga.trackEvent('filter gradients', 'click', name);
       this.currentFilter = name;
     },
   },
@@ -110,28 +111,28 @@ export default {
       return this.filterPalettes('Cyans');
     },
     redPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Reds'));
+      return this.filterPalettes('Reds');
     },
     yellowPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Yellows'));
+      return this.filterPalettes('Yellows');
     },
     greenPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Greens'));
+      return this.filterPalettes('Greens');
     },
     bluePalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Blues'));
+      return this.filterPalettes('Blues');
     },
     magentaPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Magentas'));
+      return this.filterPalettes('Magentas');
     },
     blackPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Blacks'));
+      return this.filterPalettes('Blacks');
     },
     whitePalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Whites'));
+      return this.filterPalettes('Whites');
     },
     greyPalettes() {
-      return this.classifiedColors.filter(gradient => gradient.palletes.includes('Grays'));
+      return this.filterPalettes('Grays');
     },
   },
 };

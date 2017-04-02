@@ -15,7 +15,7 @@
 
     <div class="display__footer">
       <p class="display__byline noselect">
-        For the people by the <a href="https://github.com/ghosh/uiGradients/graphs/contributors" target="_blank">people</a>. Maintained by <a href="https://twitter.com/_ighosh" target="_blank">@_ighosh</a>
+        For the people by the <a href="https://github.com/ghosh/uiGradients/graphs/contributors" target="_blank">people</a>. Maintained by <a href="https://twitter.com/_ighosh" target="_blank" @click="trackTwitter">@_ighosh</a>
       </p>
     </div>
 
@@ -43,6 +43,8 @@ export default {
   },
   methods: {
     updateIndex(dir) {
+      if (dir === 'up') this.$ga.trackEvent('gradient navigation', 'click', 'next');
+      if (dir === 'down') this.$ga.trackEvent('gradient navigation', 'click', 'prev');
       this.$emit('updatedIndex', dir);
     },
     togglePalette() {
@@ -54,28 +56,35 @@ export default {
     handleKeyboardEvents(event) {
       switch (event.which) {
         case 37: // left
+          this.$ga.trackEvent('gradient navigation', 'keypress', 'next');
           this.updateIndex('down');
           break;
         case 39: // right
+          this.$ga.trackEvent('gradient navigation', 'keypress', 'prev');
           this.updateIndex('up');
           break;
         case 38: // up
+          this.$ga.trackEvent('gradient rotation', 'keypress', 'to-left');
           this.updateDirection('up');
           break;
         case 40: // down
+          this.$ga.trackEvent('gradient rotation', 'keypress', 'to-right');
           this.updateDirection('down');
           break;
         case 16: // shift
           event.preventDefault();
           this.closeModals();
+          this.$ga.trackEvent('toggle gradient palette', 'keypress');
           this.togglePalette();
           break;
         case 13: // enter
           this.closeModals();
+          this.$ga.trackEvent('css modal display', 'keypress');
           this.showModal('code');
           break;
         case 32: // space
           this.closeModals();
+          this.$ga.trackEvent('add modal display', 'keypress');
           this.showModal('gradient');
           break;
         case 27: // escape
@@ -85,6 +94,9 @@ export default {
           break;
         default:
       }
+    },
+    trackTwitter() {
+      this.$ga.trackEvent('social', 'click', 'twitter');
     },
   },
   created() {

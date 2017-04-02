@@ -16,7 +16,7 @@
         </a>
       </li>
       <li class="ml10">
-        <a href="https://github.com/Ghosh/uiGradients" target="_blank">
+        <a href="https://github.com/Ghosh/uiGradients" target="_blank" @click="goToGithub()">
           <Github class="header__github" />
         </a>
       </li>
@@ -39,13 +39,18 @@ export default {
     Github,
   },
   methods: {
+    goToGithub() {
+      this.$ga.trackEvent('social', 'click', 'github');
+    },
     shareOnTwitter() {
+      this.$ga.query('send', 'social', 'twitter', 'share', 'http://uigradients.com/');
       window.open(
         'http://twitter.com/share?url=http://uigradients.com&amp;text=Beautiful%20color%20gradients%20for%20designers%20and%20developers&amp;via=_ighosh',
         'twitter-share',
         'width=700,height=300');
     },
     shareOnFacebook() {
+      this.$ga.query('send', 'social', 'facebook', 'share', 'http://uigradients.com/');
       window.open(
         'http://www.facebook.com/sharer.php?u=http://uigradients.com',
         'facebook-share',

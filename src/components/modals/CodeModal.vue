@@ -19,7 +19,12 @@
 
 </div>
 
-      <button class="btn" v-clipboard="copyData" @success="handleSuccess" >
+      <button 
+        class="btn"
+        id="js-copy"
+        v-clipboard="copyData" 
+        @success="handleSuccess"
+      >
           Copy Code
       </button>
 
@@ -72,11 +77,10 @@ background: linear-gradient(${this.direction}, ${[...this.gradient.colors].rever
       return messages[randomMessage];
     },
     handleSuccess() {
+      const self = this;
       this.copied = true;
+      setTimeout(() => { self.copied = false; }, 1000);
     },
-  },
-  updated() {
-    this.copied = false;
   },
 };
 </script>

@@ -19,6 +19,7 @@
           <a 
             href="#changeGradientDirection"
             class="actionbar__nav-link"
+            id="js-direction"
             @click.prevent="changeDirection()"
             data-tooltip="Rotate gradient">
             <Rotate class="actionbar__nav-icon actionbar__nav-icon--rotate" />
@@ -28,6 +29,7 @@
           <a 
           href="#openCodeModal" 
           class="actionbar__nav-link" 
+          id="js-code"
           @click.prevent="openModal('code')"
           data-tooltip="Get css">
             <Brackets class="actionbar__nav-icon actionbar__nav-icon--code" />
@@ -37,6 +39,7 @@
           <a 
             href="#OpenGradientModal" 
             class="actionbar__nav-link" 
+            id="js-gradient"
             @click.prevent="openModal('gradient')"
             data-tooltip="Add gradient">
             <Add class="actionbar__nav-icon actionbar__nav-icon--add" />
@@ -45,17 +48,13 @@
         <li class="actionbar__nav-item">
           <a 
             href="#downloadGradient" 
-            class="actionbar__nav-link" 
+            class="actionbar__nav-link"
+            id="js-download"
             @click.prevent="download()"
             data-tooltip="Get .jpg">
             <Download class="actionbar__nav-icon actionbar__nav-icon--download" />
           </a>
         </li>
-<!--         <li class="actionbar__nav-item">
-          <a href="#" class="actionbar__nav-link">
-            <Help class="actionbar__nav-icon actionbar__nav-icon--help" />
-          </a>
-        </li> -->
       </ul>
     </div>
   </section>

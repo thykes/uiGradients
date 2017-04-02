@@ -43,7 +43,7 @@
       </svg>
 
       <p class="loader__tip">
-        Use the left and right arrow keys to quickly navigate between gradients
+        {{ messages | randomize }}
       </p>
 
       <div class="spinner loader__spinner"></div>
@@ -56,9 +56,23 @@
 <script>
 export default {
   name: 'preload',
-  data: {
-    color1: '#C02425',
-    color2: '#F0CB35',
+  data() {
+    return {
+      messages: [
+        'Use the left and right arrow keys to quickly navigate between gradients',
+        'Use the top and bottom arrow keys to change gradient direction',
+        'Click on the colored square next to hex value to copy to clipboard',
+        'Hit the shift key to see all gradients',
+        'Hit the enter key to get the css code for the gradinet',
+      ],
+    };
+  },
+  filters: {
+    randomize(messages) {
+      if (!messages) return '';
+      const randomMessage = Math.floor(Math.random() * messages.length);
+      return messages[randomMessage];
+    },
   },
 };
 </script>

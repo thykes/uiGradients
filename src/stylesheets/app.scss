@@ -363,7 +363,7 @@ body {
   }
 
   &__name {
-    @include font-smoothing();
+    // @include font-smoothing();
     text-align: center;
     color: #fff;
     margin: 0;

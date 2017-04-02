@@ -159,7 +159,7 @@ export default {
       const app = this;
       setTimeout(() => {
         app.preloading = false;
-      }, 1500);
+      }, 2000);
     },
 
     boot() {

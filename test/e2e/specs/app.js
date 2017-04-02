@@ -17,14 +17,15 @@ module.exports = {
   'Gradient navigation test': function test(browser) {
     const devServer = browser.globals.devServerURL;
     browser
-      .url(`${devServer}/#SeaBlue`)
+      .url(`${devServer}/#Cherry`)
       .waitForElementVisible('#app', 5000)
-      .assert.containsText('.display__gradientname p', 'Sea Blue')
+      .pause(3000) // wait for preloader to fade
+      .assert.containsText('.display__gradientname p', 'Cherry')
       .click('#nav--next')
-      .assert.containsText('.display__gradientname p', 'Alive')
+      .assert.containsText('.display__gradientname p', 'Pinky')
       .click('#nav--prev')
       .click('#nav--prev')
-      .assert.containsText('.display__gradientname p', 'Nimvelo')
+      .assert.containsText('.display__gradientname p', 'Mojito')
       .end();
   },
 };

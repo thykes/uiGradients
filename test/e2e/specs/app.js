@@ -1,6 +1,3 @@
-// For authoring Nightwatch tests, see
-// http://nightwatchjs.org/guide#usage
-
 module.exports = {
   'App load test': function test(browser) {
     const devServer = browser.globals.devServerURL;
@@ -38,7 +35,6 @@ module.exports = {
       .click('#js-code')
       .assert.elementPresent('.modal__container')
       .assert.elementPresent('.codeblock')
-      .assert.elementPresent('#js-copy')
       .click('#js-copy')
       .assert.elementPresent('.modal__success')
       .assert.elementNotPresent('.codeblock')
@@ -46,7 +42,7 @@ module.exports = {
       .assert.elementNotPresent('.modal__success')
       .assert.elementPresent('.codeblock')
       .click('.modal__mask')
-      .assert.hidden(".modal__container")
+      .assert.hidden('.modal__container')
       .end();
   },
 

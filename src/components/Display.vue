@@ -13,6 +13,13 @@
       </li>
     </ul>
 
+    <div class="display__footer">
+      <p class="display__byline">
+        <!-- Made by awesome <a href="https://github.com/ghosh/uiGradients/graphs/contributors" target="_blank">contributors</a> and <a href="https://twitter.com/_ighosh" target="_blank">@_ighosh</a> -->
+        For the people by the people. Maintained by <a href="https://twitter.com/_ighosh" target="_blank">@_ighosh</a>
+      </p>
+    </div>
+
   </main>
 </template>
 

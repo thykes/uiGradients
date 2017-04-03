@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-uiGradients is a community contributed collection of beautifull multi-color gradients
+uiGradients is a community contributed collection of beautiful multi-color gradients
 </p>
 
 ---
@@ -29,7 +29,7 @@ This is an effort to give back to the community, by the community. Hopefully thi
 ## Contributing
 Adding a gradient to the library is super simple. All the gradients are loaded and rendered from a single gradients.json file in the root.
 
-To add your gradient, fork this repository, add your gradient colours in the HEX format along with a name to the end of the json file and submit a pull request. Don't forget the commas!
+To add your gradient, fork this repository, add your gradient colors in the HEX format along with a name to the end of the json file and submit a pull request. Don't forget the commas!
 
 ```
 [
@@ -38,7 +38,7 @@ To add your gradient, fork this repository, add your gradient colours in the HEX
     }, // <-- Do not forget this comma
     {
       "name": "Career", // <-- and this comma too
-      "colors": ["#cb202d", "#DC1E28", "#3366cc"]
+      "colors": ["#cb202d", "#dc1e28", "#3366cc"]
     }
 ]
 ```
@@ -52,8 +52,8 @@ Please feel free to open a new issue here with your suggestions or any bugs whic
 
 
 
-## JSON Data
-The gradients data can be fetched in json directly from the gradients.json file.
+## Data
+While there is no official api, all the gradients are present in the `gradients.json` file. The code below is an example of fetching the data via CURL
 ```
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json
 ```
@@ -68,10 +68,8 @@ A few open source projects built with uiGradients
 - [uigradients-scss](https://github.com/subinsebastian/uigradients-scss) - uiGradients ported to scss
 - [helper-uigradient](https://github.com/helpers/helper-uigradient) - Handlebar helper for uiGradients
 
----
-
 
 <p align="center">✌️</p>
 <p align="center">
-<small>A little project by <a href="https://twitter.com/_ighosh">@i_ghosh</a></small>
+<sub><sup>A little project by <a href="https://twitter.com/_ighosh">@i_ghosh</a></sup></sub>
 </p>

@@ -43,7 +43,7 @@ To add your gradient, fork this repository, add your gradient colors in the HEX 
 ]
 ```
 
-Please keep gradient submissions and bug fixes in separate PRs.
+*NOTE* - Please keep gradient submissions and bug fixes in separate PRs.
 
 
 
@@ -53,11 +53,10 @@ Please feel free to open a new issue here with your suggestions or any bugs whic
 
 
 ## Data
-While there is no official api, all the gradients are present in the `gradients.json` file. The code below is an example of fetching the data via CURL
+While there is no official api, all the gradients are present in the `gradients.json` file. The code below is an example of fetching the data via a CURL request
 ```
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json
+curl -i https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json
 ```
-
 
 
 ## Built with uiGradients
@@ -67,6 +66,8 @@ A few open source projects built with uiGradients
 - [uigradients](https://github.com/JSBros/uigradients) - Styled components for uiGradients
 - [uigradients-scss](https://github.com/subinsebastian/uigradients-scss) - uiGradients ported to scss
 - [helper-uigradient](https://github.com/helpers/helper-uigradient) - Handlebar helper for uiGradients
+
+&nbsp;
 
 
 <p align="center">✌️</p>

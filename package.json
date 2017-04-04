@@ -105,8 +105,8 @@
     "staticpath": "dist",
     "cname": "uigradients.com",
     "prep": [
-      "build",
+      "build"
     ],
     "noprompt": false
-  },
+  }
 }

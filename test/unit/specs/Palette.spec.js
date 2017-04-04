@@ -31,4 +31,9 @@ describe('Palette.vue', () => {
     expect(wrapper.hasStyle('background', 'linear-gradient(to left, #1FA2FF,#21DCF6,#A6FFCB)'))
     .to.equal(true);
   });
+
+  it('should call updateGradient method when clicked', () => {
+    wrapper.simulate('click');
+    expect(clickHandler.called).to.equal(true);
+  });
 });

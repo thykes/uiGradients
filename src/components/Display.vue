@@ -15,7 +15,7 @@
 
     <div class="display__footer">
       <p class="display__byline noselect">
-        For the people by the <a href="https://github.com/ghosh/uiGradients/graphs/contributors" target="_blank">people</a>. Maintained by <a href="https://twitter.com/_ighosh" target="_blank" @click="trackTwitter">@_ighosh</a>
+        Built for the community by <a href="https://twitter.com/_ighosh" target="_blank" @click="trackTwitter">@_ighosh</a>
       </p>
     </div>
 

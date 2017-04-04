@@ -8,11 +8,11 @@
           <polygon id="a" points=".079 .082 12.554 .082 12.554 18.317 .079 18.317 .079 .082"/>
           <polygon id="c" points=".022 .082 12.498 .082 12.498 18.317 .022 18.317 .022 .082"/>
           <linearGradient id="logo-gradient" x1="50%" y1="0%" x2="50%" y2="100%" > 
-            <stop offset="0%" stop-color="#a044ff">
-                <animate attributeName="stop-color" values="#a044ff; #6a3093; #a044ff" dur="4s" repeatCount="indefinite"></animate>
+            <stop offset="0%" stop-color="#ff512f">
+                <animate attributeName="stop-color" values="#ff512f; #F09819; #ff512f" dur="1s" repeatCount="indefinite"></animate>
             </stop>
-            <stop offset="100%" stop-color="#6a3093">
-                <animate attributeName="stop-color" values="#6a3093; #a044ff; #6a3093" dur="4s" repeatCount="indefinite"></animate>
+            <stop offset="100%" stop-color="#F09819">
+                <animate attributeName="stop-color" values="#F09819; #ff512f; #F09819" dur="1s" repeatCount="indefinite"></animate>
             </stop>
           </linearGradient> 
         </defs>

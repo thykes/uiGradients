@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#">
-    <img src="https://img.shields.io/badge/crafted%20with-love-E760A4.svg" alt="Crafted with love">
+    <img src="https://img.shields.io/badge/made%20with-love-E760A4.svg" alt="Made with love">
   </a>
   <a href="https://opensource.org/licenses/MIT" target="_blank">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
@@ -35,9 +35,9 @@ To add your gradient, fork this repository, add your gradient colors in the HEX 
 [
     {
         …
-    }, // <-- Do not forget this comma
+    },
     {
-      "name": "Career", // <-- and this comma too
+      "name": "Career",
       "colors": ["#cb202d", "#dc1e28", "#3366cc"]
     }
 ]
